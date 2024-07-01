@@ -1,0 +1,23 @@
+ion-content{
+  --background:var(--ion-color-base) !important;
+  ion-item{
+    --background:var(--ion-color-base) !important;
+  }
+}
+ion-input {
+  --border-width: 0;
+  --box-shadow: none;
+  // --background:#fff !important;
+
+}
+.invalid {
+  border: 1px solid red
+}
+ion-text span{
+  font-size: 13px;
+}
+.login-btn{
+  --background: #DB3022;
+  min-height: 40px;
+  margin-top: 20%;
+}

@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-item lines="none">
+    <ion-back-button defaultHref="/login" icon="chevron-back"></ion-back-button>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-2">Forgot password</h1>
+  </ion-item>
+  <ion-item lines="none" class="mx-1 mt-5">
+    <span class="mt-5"
+      >Please, enter your email address. You will receive a link to create a new
+      password via email.</span
+    >
+  </ion-item>
+
+  <form [formGroup]="eForm">
+    <ion-item lines="none" class="mt-2">
+      <ion-input
+        [class.invalid]="
+          eForm.get('email_new')?.invalid &&
+          (eForm.get('email_new')?.dirty || eForm.get('email_new')?.touched)
+        "
+        formControlName="email_new"
+        type="text"
+        fill="solid"
+        label="Email"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="ms-3"
+      color="danger"
+      *ngIf="
+        eForm.get('email_new')?.invalid &&
+        (eForm.get('email_new')?.dirty || eForm.get('email_new')?.touched)
+      "
+    >
+      <span *ngIf="eForm.get('email_new')?.errors?.['required']"
+        >Email is required.</span
+      >
+      <span *ngIf="eForm.get('email_new')?.errors?.['email']"
+        >Not a valid email address. Should be your&#64;email.com</span
+      >
+    </ion-text>
+
+    <ion-item lines="none" class="mt-5">
+      <ion-button
+        (click)="onSubmit()"
+        class="col-12 login-btn p-2"
+        shape="round"
+      >
+        SEND</ion-button
+      >
+    </ion-item>
+  </form>
+</ion-content>

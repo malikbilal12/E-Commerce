@@ -8,7 +8,30 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+ :root {
+	--ion-color-new: #f9f9f9;
+	--ion-color-new-rgb: 249,249,249;
+	--ion-color-new-contrast: #000000;
+	--ion-color-new-contrast-rgb: 0,0,0;
+	--ion-color-new-shade: #dbdbdb;
+	--ion-color-new-tint: #fff;
+  --ion-color-new-black:black;
+  --ion-color-input:rgb(58, 54, 54);
+  --ion-color-white:white;
+  --ion-color-new-red:#DB3022;
+}
 
+.ion-color-new {
+	--ion-color-base: var(--ion-color-new);
+	--ion-color-base-rgb: var(--ion-color-new-rgb);
+	--ion-color-contrast: var(--ion-color-new-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb);
+	--ion-color-shade: var(--ion-color-new-shade);
+	--ion-color-tint: var(--ion-color-new-tint);
+  --ion-color-black: var(--ion-color-new-black);
+  --ion-color-white: var(--ion-color-white);
+  --ion-color-red:var(--ion-color-new-red:red);
+}
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -32,6 +55,19 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.always.css";
+@import "@ionic/angular/css/palettes/dark.class.css";
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+@font-face {
+  font-family: main_heading;
+  src: url(./assets/metropolis.extra-bold.otf);
+}
+@font-face {
+  font-family: heading1;
+  src: url(./assets/metropolis.medium.otf);
+}
+@font-face {
+  font-family: heading;
+  src: url(./assets/metropolis.semi-bold.otf);
+}

@@ -1,0 +1,52 @@
+<ion-content>
+  <ion-item lines="none" class="search">
+    <ion-icon slot="end" name="search"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-2">My Bag</h1>
+  </ion-item>
+  <ion-row
+    *ngFor="let i of items; let index = index"
+    lines="none"
+    class="rounded p-0"
+  >
+    <ion-col size="4" class="p-0">
+      <img class="img-tag" [src]="i.url" />
+    </ion-col>
+    <ion-col size="6" class="item-detail">
+      <h2>{{ i.name }}</h2>
+      <ion-text>
+        <span class="name">Color:</span>
+        <strong class="ms-1">{{ i.color }}</strong>
+        <span class="ms-2">Size:</span>
+        <strong class="ms-1">{{ i.size }}</strong>
+      </ion-text>
+
+      <div class="d-flex align-items-center gap-3">
+        <ion-icon (click)="sub(index)" name="remove"></ion-icon>
+        <span>{{ i.q }}</span>
+        <ion-icon (click)="add(index)" name="add"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col size="2" class="p-0 menu">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+      <span>{{ i.price * i.q | currency : "USD" : "symbol" : "1.0-0" }}</span>
+    </ion-col>
+  </ion-row>
+  <ion-item lines="none" class="input-promo">
+    <ion-input placeholder="Enter your promo code"
+      ><ion-icon name="arrow-forward" slot="end"></ion-icon
+    ></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="total_amount">
+    <span slot="start">Totoal Amount:</span>
+    <ion-text slot="end"
+      ><h6>{{ getTotalPrice() }}$</h6></ion-text
+    >
+  </ion-item>
+  <ion-item lines="none" class="mt-3">
+    <ion-button class="col-12 checkout-btn p-2" shape="round">
+      Check out</ion-button
+    >
+  </ion-item>
+</ion-content>

@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon
+        [attr.name]="selectedTab === 'home' ? 'home' : 'home-outline'"
+        size="large"
+      ></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button tab="shop">
+      <ion-icon
+        [attr.name]="selectedTab === 'shop' ? 'cart' : 'cart-outline'"
+        size="large"
+      ></ion-icon>
+      Shop
+    </ion-tab-button>
+    <ion-tab-button tab="bag">
+      <ion-icon
+        [attr.name]="selectedTab === 'bag' ? 'bag-handle' : 'bag-handle-outline'"
+        size="large"
+      ></ion-icon>
+      Bag
+    </ion-tab-button>
+    <ion-tab-button tab="fav">
+      <ion-icon
+        [attr.name]="selectedTab === 'fav' ? 'heart' : 'heart-outline'"
+        size="large"
+      ></ion-icon>
+      Favorites
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon
+        [attr.name]="selectedTab === 'profile' ? 'person' : 'person-outline'"
+        size="large"
+      ></ion-icon>
+      Profile
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-back-button
+        class="ms-3"
+        slot="start"
+        defaultHref="/home"
+        icon="chevron-back"
+      ></ion-back-button>
+      <ion-text class="fw-bold center"> Categories </ion-text>
+      <ion-icon class="me-3" slot="end" name="search"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-segment class="my-3" value="women">
+    <ion-segment-button value="women">
+      <ion-label class="text-capitalize">Women</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="men">
+      <ion-label class="text-capitalize">Men</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="kids">
+      <ion-label class="text-capitalize">Kids</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-row class="ion-justify-content-center">
+    <div class="announcement" [routerLink]="['/shop/categories']">
+      <h1 class="text-uppercase">summer sales</h1>
+      <h5>Up to 50% off</h5>
+    </div>
+  </ion-row>
+  <ion-item *ngFor="let cat of categories" lines="none" class="rounded p-0">
+    <h3 slot="start" class="fw-bold m-0 ms-2">{{ cat.name }}</h3>
+    <img slot="end" class="img-tag" [src]="cat.url" />
+  </ion-item>
+</ion-content>

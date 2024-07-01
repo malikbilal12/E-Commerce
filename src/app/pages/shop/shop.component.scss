@@ -1,0 +1,51 @@
+ion-content{
+--background:var(--ion-color-base);
+
+}
+
+.center{
+  margin-left: 30%;
+}
+ion-segment{
+  --background:var(--ion-color-new-tint);
+}
+ion-segment-button {
+  --indicator-color: #DB3022;
+}
+
+ion-segment-button.md {
+  --color: #5e5757;
+  --color-checked: #000;
+  --indicator-height: 4px;
+}
+
+ion-segment-button.ios {
+  --color: #5e5757;
+  --color-checked: #000;
+  --border-radius: 20px;
+}
+ion-row{
+ background:#DB3022;
+ margin: 5%;
+ color: #ffff;
+ border-radius: 10px;
+ padding: 5%;
+ h1{
+  margin-bottom: 1%;
+  margin-top: 5%;
+ }
+ h5{
+  text-align: center;
+  margin-top: 0;
+ }
+}
+ion-item{
+  --inner-padding-end:0 !important;
+  margin: 5%;
+}
+.img-tag{
+  max-height: 100px;
+}
+
+
+

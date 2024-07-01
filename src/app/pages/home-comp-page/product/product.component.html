@@ -1,0 +1,41 @@
+<div>
+  <div
+    class="product-container"
+    [style.background-image]="'url(' + product.url + ')'"
+  >
+    <span *ngIf="product.discount" class="discount rounded-pill">{{
+      product.discount
+    }}</span>
+    <span *ngIf="!product.discount" class="discount_no rounded-pill">New</span>
+    <ion-img
+      class="product-image"
+      [src]="product.url"
+      alt="{{ product.product_name }}"
+    />
+    <ion-icon
+      class="icon"
+      [ngClass]="{ liked: like }"
+      [name]="like ? 'heart' : 'heart-outline'"
+      name="heart-outline"
+      (click)="like = !like"
+    ></ion-icon>
+  </div>
+
+  <p [routerLink]="['/home/rating']" class="mt-2 mb-0">
+    ⭐⭐⭐⭐⭐({{ product.star }})
+  </p>
+
+  <ion-card-subtitle class="catagory-name">{{
+    product.product_name
+  }}</ion-card-subtitle>
+  <ion-card-title class="catagory">{{ product.catagory }}</ion-card-title>
+
+  <ion-text>
+    <span class="old-price">{{
+      product.old_price | currency : "USD" : "symbol" : "1.0-0"
+    }}</span>
+    <span class="new-price ms-2">{{
+      product.new_price | currency : "USD" : "symbol" : "1.0-0"
+    }}</span>
+  </ion-text>
+</div>

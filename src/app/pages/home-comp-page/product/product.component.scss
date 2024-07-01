@@ -1,0 +1,70 @@
+
+.old-price {
+  text-decoration: line-through;
+  color: #757575;
+  font-size: 12px;
+}
+
+.new-price {
+  font-size: 12px;
+  font-weight: bold;
+  color: #e53935;
+}
+.product-container {
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 170px;   width: 140px;
+  background-size: cover;
+  background-position: center;
+  ion-img{
+    display: none;
+  }
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  background-color:#DB3022;
+  padding: 3px 8px;
+  font-size: 11px;
+}
+.discount_no {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  background-color:#222222;
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+.icon {
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+  font-size: 18px;
+  background-color:var(--ion-color-white);
+  padding: 10px;
+  border-radius: 50%;
+  color:#9B9B9B;
+}
+p{
+  font-size: 11px;
+  color: #9B9B9B;
+}
+.catagory{
+  font-family: heading;
+  font-size: 14px;
+}
+.catagory-name{
+  font-size: 12px;
+}
+.icon.liked{
+  color: #DB3022;
+}

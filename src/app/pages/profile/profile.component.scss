@@ -1,0 +1,48 @@
+ion-content{
+  --background:var(--ion-color-main)
+}
+ion-item{
+  --background:var(--ion-color-base);
+}
+
+h1{
+  font-size: 35px;
+}
+.search::part(native) {
+  --inner-padding-end	: 10px;
+
+}
+span{
+  color: #9b9b9b;
+}
+ion-text{
+  margin: 5% 10%;
+}
+.list{
+  --padding-start:0 !important;
+}
+ion-toggle {
+  padding: 12px;
+
+  --track-background: #9B9B9B;
+  --track-background-checked: #9B9B9B;
+
+  --handle-background: #ffff;
+  --handle-background-checked: #95c34e;
+
+  --handle-width: 27px;
+  --handle-height: 27px;
+  --handle-max-height: auto;
+  // --handle-spacing: 6px;
+
+  --handle-border-radius: 50%;
+  // --handle-box-shadow: none;
+}
+
+ion-toggle::part(track) {
+  height: 27px;
+  width: 45px;
+
+  /* Required for iOS handle to overflow the height of the track */
+  overflow: visible;
+}

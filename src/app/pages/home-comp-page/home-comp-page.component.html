@@ -1,0 +1,45 @@
+<ion-content>
+  <div class="fashion_sale">
+    <h1 class="fw-bolder ms-3">Fashion <br />sale</h1>
+    <ion-button
+      (click)="goToDetail()"
+      class="col-3 mb-4 ms-3 login-btn"
+      shape="round"
+      >Check</ion-button
+    >
+  </div>
+  <!-- new product  -->
+  <ion-item lines="none" class="my-4">
+    <ion-text slot="start" class="heading">
+      <h1 class="m-0">New</h1>
+      <span class="text-secondary m-0">You've never seen it before!</span>
+    </ion-text>
+    <ion-text (click)="goToNewDetail()" slot="end">View All</ion-text>
+  </ion-item>
+  <ion-item lines="none" class="my-2">
+    <div class="scroll-container">
+      <app-product
+        *ngFor="let product of new_products"
+        [product]="product"
+      ></app-product>
+    </div>
+  </ion-item>
+  <!-- new product  -->
+  <!-- product  -->
+  <ion-item lines="none" class="my-4">
+    <ion-text slot="start" class="heading">
+      <h1 class="m-0">Sale</h1>
+      <span class="text-secondary m-0">{{ superSale }}</span>
+    </ion-text>
+    <ion-text (click)="goToSaleDetail()" slot="end">View all</ion-text>
+  </ion-item>
+  <ion-item lines="none" class="my-2">
+    <div class="scroll-container">
+      <app-product
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product>
+    </div>
+  </ion-item>
+  <!-- product  -->
+</ion-content>

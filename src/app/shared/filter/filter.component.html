@@ -1,0 +1,71 @@
+<h6 class="ms-4">Price range</h6>
+
+<ion-item lines="none" class="range">
+  <div class="d-flex flex-column w-100">
+    <ion-text class="d-flex justify-content-between">
+      <span>${{ lower }}</span>
+      <span>${{ upper }}</span>
+    </ion-text>
+    <ion-text> </ion-text>
+    <ion-range
+      aria-label="Dual Knobs Range"
+      [dualKnobs]="true"
+      [min]="min"
+      [max]="max"
+      [value]="{ lower: lower, upper: upper }"
+      (ionChange)="onRangeChange($event)"
+    ></ion-range>
+  </div>
+</ion-item>
+<h6 class="ms-4">Colors</h6>
+<ion-item lines="none" class="color">
+  <div
+    *ngFor="let color of colors; let i = index"
+    [style.backgroundColor]="color"
+    (click)="selectColor(i)"
+    class="colors"
+  >
+    <div [ngClass]="{ 'border-active': selectColors.includes(i) }"></div>
+  </div>
+</ion-item>
+<h6 class="ms-4">Sizes</h6>
+<ion-item lines="none" class="size">
+  <span
+    (click)="selectSize(i)"
+    *ngFor="let s of sizes; let i = index"
+    [ngClass]="{ 'bg-red': selectSizes.includes(i) }"
+    >{{ s }}</span
+  >
+</ion-item>
+
+<h6 class="ms-4">Category</h6>
+<ion-item lines="none" class="category">
+  <div class="d-flex flex-wrap gap-2">
+    <span
+      (click)="selectCategory(i)"
+      *ngFor="let s of category; let i = index"
+      [ngClass]="{ 'bg-red': selectCategories.includes(i) }"
+      >{{ s }}</span
+    >
+  </div>
+</ion-item>
+<ion-row>
+  <ion-col size="6">
+    <ion-button
+      fill="outline"
+      class="text-capitalize discard"
+      expand="full"
+      shape="round"
+      >Discard</ion-button
+    >
+  </ion-col>
+  <ion-col size="6">
+    <ion-button
+      color="danger"
+      class="text-capitalize"
+      expand="full"
+      shape="round"
+      >Apply</ion-button
+    >
+  </ion-col>
+</ion-row>

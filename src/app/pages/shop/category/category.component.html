@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button
+      class="ms-3"
+      slot="start"
+      defaultHref="/shop"
+      icon="chevron-back"
+    ></ion-back-button>
+    <ion-text class="fw-bold center"> Categories </ion-text>
+    <ion-icon class="text-dark me-3" slot="end" name="search"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item lines="none" class="my-3">
+    <ion-button class="col-12 view-btn p-2" shape="round">
+      VIEW ALL ITEMS</ion-button
+    >
+  </ion-item>
+  <ion-text class="choose"> Choose category </ion-text>
+  <ion-item *ngFor="let c of categories">
+    <ion-label>{{ c.n }}</ion-label>
+  </ion-item>
+</ion-content>

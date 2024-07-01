@@ -1,0 +1,107 @@
+<ion-content>
+  <ion-item lines="none" class="my-3">
+    <ion-back-button
+      slot="start"
+      defaultHref="/profile"
+      icon="chevron-back"
+    ></ion-back-button>
+    <ion-icon slot="end" name="search"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder mt-2 ms-3">Settings</h1>
+  </ion-item>
+  <ion-item lines="none">
+    <h4 class="fw-bolder mt-3 ms-3">Personal Information</h4>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-input
+      type="text"
+      fill="solid"
+      label="Full Name"
+      labelPlacement="floating"
+    ></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-input
+      type="text"
+      fill="solid"
+      label="Date of Birth"
+      ngModel="12/12/1989"
+      labelPlacement="floating"
+    ></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <div class="d-flex justify-content-between w-100 mt-3 mx-3">
+      <p>Password</p>
+      <span id="open-modal">Change</span>
+    </div>
+  </ion-item>
+  <ion-item lines="none" class="mb-3">
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Password"
+      ngModel="12/12/1989"
+      labelPlacement="floating"
+    ></ion-input>
+  </ion-item>
+  <ion-text class="ms-3">Notifications</ion-text>
+  <ion-item lines="none">
+    <ion-toggle class="mx-3" [checked]="true">Sale</ion-toggle>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-toggle class="mx-3">New arrivals</ion-toggle>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-toggle class="mx-3">Delivery status changes</ion-toggle>
+  </ion-item>
+
+  <ion-modal
+    #modal
+    trigger="open-modal"
+    [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+  >
+    <ng-template>
+      <ion-label class="my-4 ion-text-center fw-bolder">
+        Password Change
+      </ion-label>
+      <ion-item lines="none">
+        <ion-input
+          type="password"
+          fill="solid"
+          label="Old Password"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-text slot="end">Forgot Password?</ion-text></ion-item
+      >
+      <ion-item lines="none">
+        <ion-input
+          type="password"
+          fill="solid"
+          label="New Password"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          type="password"
+          fill="solid"
+          label="Repeat New Password"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="mt-3">
+        <ion-button
+          (click)="modal.dismiss()"
+          class="col-12 password-btn p-2"
+          shape="round"
+        >
+          Save Password</ion-button
+        >
+      </ion-item>
+    </ng-template>
+  </ion-modal>
+</ion-content>

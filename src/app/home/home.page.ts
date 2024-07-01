@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  selectedTab: any
+  constructor() { }
 
-  constructor() {}
+  setCurrentTab(event: any) {
+    this.selectedTab = event.tab
+  }
 
 }

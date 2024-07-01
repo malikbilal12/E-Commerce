@@ -1,0 +1,70 @@
+ion-content{
+  --background: var(--ion-color-base);
+  ion-item{
+    --background: var(--ion-color-base);
+    --padding-start: 0;
+    // --inner-padding-end: 0;
+    span{
+      color: #9b9b9b;
+    }
+  }
+}
+ion-input {
+  --border-width: 0;
+  --box-shadow: none;
+  --background:var(--ion-color-new-tint);
+  // min-height: 80px !important;
+  margin: 3%;
+}
+ion-toggle {
+  padding: 12px;
+
+  --track-background: #9B9B9B;
+  --track-background-checked: #9B9B9B;
+
+  --handle-background: #ffff;
+  --handle-background-checked: #95c34e;
+
+  --handle-width: 27px;
+  --handle-height: 27px;
+  --handle-max-height: auto;
+  // --handle-spacing: 6px;
+
+  --handle-border-radius: 50%;
+  // --handle-box-shadow: none;
+}
+
+ion-toggle::part(track) {
+  height: 27px;
+  width: 45px;
+
+  /* Required for iOS handle to overflow the height of the track */
+  overflow: visible;
+}
+.block {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-modal {
+  --height: auto;
+  --border-radius: 15px 15px 0 0;
+  --background:var(--ion-color-new);
+  ion-item{
+    --background:var(l--ion-color-new);
+    ion-input{
+      margin-bottom: 0;
+    }
+    ion-text{
+      margin-right: 3%;
+      color: #9B9B9B;
+    }
+  }
+}
+.password-btn{
+  --background: #DB3022;
+  min-height: 50px;
+}

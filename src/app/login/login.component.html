@@ -1,0 +1,121 @@
+<ion-content>
+  <ion-item lines="none">
+    <ion-back-button defaultHref="/home" icon="chevron-back"></ion-back-button>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-2">Login</h1>
+  </ion-item>
+
+  <form [formGroup]="regForm">
+    <ion-item lines="none" class="mt-5">
+      <ion-input
+        *ngIf="login == 'login'"
+        formControlName="name"
+        [class.invalid]="
+          regForm.get('name')?.invalid &&
+          (regForm.get('name')?.dirty || regForm.get('name')?.touched)
+        "
+        type="text"
+        fill="solid"
+        label="Name"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="ms-3"
+      color="danger"
+      *ngIf="
+        regForm.get('name')?.invalid &&
+        (regForm.get('name')?.dirty || regForm.get('name')?.touched)
+      "
+    >
+      <span>Name is required.</span>
+    </ion-text>
+    <ion-item lines="none" class="mt-2">
+      <ion-input
+        [class.invalid]="
+          regForm.get('email')?.invalid &&
+          (regForm.get('email')?.dirty || regForm.get('email')?.touched)
+        "
+        formControlName="email"
+        type="text"
+        fill="solid"
+        label="Email"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="ms-3"
+      color="danger"
+      *ngIf="
+        regForm.get('email')?.invalid &&
+        (regForm.get('email')?.dirty || regForm.get('email')?.touched)
+      "
+    >
+      <span *ngIf="regForm.get('email')?.errors?.['required']"
+        >Email is required.</span
+      >
+      <span *ngIf="regForm.get('email')?.errors?.['email']"
+        >Not a valid email address. Should be your&#64;email.com</span
+      >
+    </ion-text>
+
+    <ion-item lines="none" class="mt-2">
+      <ion-input
+        [class.invalid]="
+          regForm.get('password')?.invalid &&
+          (regForm.get('password')?.dirty || regForm.get('password')?.touched)
+        "
+        formControlName="password"
+        type="Password"
+        fill="solid"
+        label="Password"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="ms-3"
+      color="danger"
+      *ngIf="
+        regForm.get('password')?.invalid &&
+        (regForm.get('password')?.dirty || regForm.get('password')?.touched)
+      "
+    >
+      <span>Password is required.</span>
+    </ion-text>
+  </form>
+  <ion-item lines="none" class="mt-2" *ngIf="login == 'reg'">
+    <ion-text slot="end" class="forgot" [routerLink]="['/login/forgot']"
+      >Forgot your password?
+      <ion-img class="arrow-icon" src="assets/arrow-right-long-solid.svg" />
+    </ion-text>
+  </ion-item>
+  <ion-item lines="none" *ngIf="login == 'reg'">
+    <ion-text slot="end" class="forgot" (click)="goToreg()"
+      >Don't have an account?
+      <ion-img class="arrow-icon" src="assets/arrow-right-long-solid.svg" />
+    </ion-text>
+  </ion-item>
+  <ion-item lines="none" class="mt-2" *ngIf="login == 'login'">
+    <ion-text slot="end" class="forgot" (click)="goTologin()"
+      >Already have an account?
+      <ion-img class="arrow-icon" src="assets/arrow-right-long-solid.svg" />
+    </ion-text>
+  </ion-item>
+  <ion-item lines="none" class="mt-3">
+    <ion-button (click)="onSubmit()" class="col-12 login-btn p-2" shape="round">
+      {{ login == "reg" ? "LOGIN" : "SIGN UP" }}</ion-button
+    >
+  </ion-item>
+  <ion-footer
+    class="ion-no-border d-flex align-content-center flex-wrap flex-column"
+  >
+    <span class="d-flex justify-content-center">
+      <ion-text>Or login with social account</ion-text>
+    </span>
+    <span class="d-flex justify-content-center social-icon">
+      <ion-img src="assets/google.png" />
+      <ion-img src="assets/facebook.png" />
+    </span>
+  </ion-footer>
+</ion-content>

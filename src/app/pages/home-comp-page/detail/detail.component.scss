@@ -1,0 +1,14 @@
+ion-content{
+  --background:var(--ion-color-base);
+  ion-item{
+    --background:var(--ion-color-base);
+    margin: 2%;
+  }
+}
+.scroll-container {
+  justify-content:center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  -webkit-overflow-scrolling: touch;
+}

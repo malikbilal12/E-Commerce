@@ -1,0 +1,106 @@
+ion-item{
+  --background:#f9f9f9;
+}
+ion-item.range{
+  --min-height: 80px !important;
+  --background:#fff;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  ion-text{
+    margin: 0% 5% -8px 5%;
+  }
+}
+ion-range {
+  --bar-background: #9B9B9B;
+    --bar-background-active: #DB3022;
+    --bar-height: 3px;
+    --bar-border-radius: 8px;
+    --knob-background: #DB3022;
+    --knob-size: 30px;
+    --pin-background: #DB3022;
+    --pin-color: #DB3022;
+}
+ion-item.color{
+  --min-height: 80px !important;
+  --background:#fff;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+.colors{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  gap: 1px;
+  margin-left: 5%;
+}
+.border-active {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #DB3022;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+ion-item.size{
+  --min-height: 80px !important;
+  --background:#fff;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  span{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 5%;
+    border: 1px solid #9B9B9B;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+  }
+}
+ion-item.category{
+  --min-height: 150px !important;
+  --background:#fff;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  span{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 3%;
+    border: 1px solid #9B9B9B;
+    min-width: 100px;
+    height: 40px;
+    border-radius: 6px;
+  }
+}
+
+.bg-red{
+  background-color: #DB3022;
+  border: 0px !important;
+  color: #fff;
+}
+ion-button.discard {
+  --background: #fff;
+  --background-hover: #fff;
+  --background-activated: #fff;
+  --background-focused: #fff;
+
+  --color: black;
+
+  --border-radius: 20px;
+  --border-color: #000;
+  --border-style: solid;
+  --border-width: 1px;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: #DB3022;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}

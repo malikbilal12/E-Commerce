@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-item lines="none" class="my-3">
+    <ion-back-button
+      slot="start"
+      defaultHref="/home"
+      icon="chevron-back"
+    ></ion-back-button>
+    <ion-icon
+      (click)="search = !search"
+      class="text-dark"
+      slot="end"
+      name="search"
+    ></ion-icon>
+  </ion-item>
+  <ion-item lines="none" class="my-2" *ngIf="search">
+    <ion-searchbar
+      show-cancel-button="focus"
+      placeholder="Show on Focus"
+    ></ion-searchbar>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-2">{{ heading }}</h1>
+  </ion-item>
+  <ion-item lines="none" class="filter">
+    <ion-text slot="start" class="start-section">
+      <ion-icon name="filter"></ion-icon>
+      <span class="ms-2">Filters</span>
+    </ion-text>
+    <ion-icon slot="end" name="list"></ion-icon>
+  </ion-item>
+  <ion-item lines="none" class="my-2">
+    <div class="scroll-container">
+      <app-product
+        *ngFor="let productItem of product"
+        [product]="productItem"
+      ></app-product>
+    </div>
+  </ion-item>
+</ion-content>

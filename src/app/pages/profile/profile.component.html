@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-item lines="none" class="search">
+    <ion-icon slot="start" name="search"></ion-icon>
+    <ion-buttons slot="end">
+      <ion-toggle
+        [(ngModel)]="paletteToggle"
+        (ionChange)="toggleChange($event)"
+        justify="space-between"
+        >Dark Mode</ion-toggle
+      >
+    </ion-buttons>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-2 mb-3">My Profile</h1>
+  </ion-item>
+  <ion-item lines="none" [routerLink]="['/login']">
+    <img class="rounded-circle ms-3" src="assets/sale/profile.png" />
+    <ion-text class="ms-4">
+      <h4 class="m-0">Matlda Brown</h4>
+      <span>matldabrown&#64;mail.com</span>
+    </ion-text>
+  </ion-item>
+  <ion-item
+    *ngFor="let p of properties; let i = index"
+    detail="true"
+    class="list"
+  >
+    <ion-text (click)="goToMyorder(i)">
+      <h4 class="mb-0">{{ p.n }}</h4>
+      <span>{{ p.d }}</span>
+    </ion-text>
+  </ion-item>
+</ion-content>

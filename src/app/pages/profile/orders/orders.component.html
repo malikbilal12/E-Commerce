@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-item lines="none" class="my-3">
+    <ion-back-button
+      slot="start"
+      defaultHref="/profile"
+      icon="chevron-back"
+    ></ion-back-button>
+    <ion-icon slot="end" class="me-3" name="search"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <h1 class="fw-bolder ms-3">My Orders</h1>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-justify-content-center ion-align-items-center p-3">
+        <ion-col class="ion-text-center">
+          <span class="rounded-pill py-2 px-4 ms-2 dark">Delivered</span>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <span>Processing</span>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <span>Cancelled</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-row *ngFor="let o of order" class="detail">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <h5 class="mb-2">{{ o.no }}</h5>
+      <span>{{ o.date }}</span>
+    </div>
+    <ion-text>
+      <span>Tracking number:</span> <strong class="ms-2">{{ o.tno }}</strong>
+    </ion-text>
+    <div class="d-flex justify-content-between w-100 my-2">
+      <ion-text>
+        <span>Quantity: </span><strong>{{ o.q }}</strong>
+      </ion-text>
+      <ion-text>
+        <span>Total Amount: </span><strong>{{ o.total }}$</strong>
+      </ion-text>
+    </div>
+    <div class="d-flex justify-content-between align-items-center w-100 mt-2">
+      <p class="btn">Details</p>
+      <p class="text-success">Deleiverd</p>
+    </div>
+  </ion-row>
+</ion-content>

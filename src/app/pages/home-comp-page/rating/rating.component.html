@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button
+      class="ms-3"
+      slot="start"
+      defaultHref="/home"
+      icon="chevron-back"
+    ></ion-back-button>
+    <ion-text class="fw-bold center"> Rating and reviews </ion-text>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item lines="none" class="mt-5">
+    <h3 slot="start" class="fw-bolder ms-3">8 reviews</h3>
+
+    <ion-checkbox checked="true" slot="end" labelPlacement="end"
+      >With photo</ion-checkbox
+    >
+  </ion-item>
+
+  <ion-row class="chat p-3">
+    <div class="d-flex justify-content-between w-100">
+      <strong>Kim Shine <br />⭐⭐⭐⭐</strong>
+      <span
+        ><br />
+        August 12, 2024</span
+      >
+    </div>
+    <p class="mb-1">
+      I love this dress so much. This dress combines elegance and comfort
+      effortlessly, perfect for any formal occasion. The fabric feels luxurious,
+      with a flattering cut that accentuates the silhouette.
+    </p>
+    <div class="img">
+      <ion-thumbnail *ngFor="let i of img">
+        <ion-img [src]="i.url" />
+      </ion-thumbnail>
+    </div>
+    <span class="mt-2 d-flex justify-content-end w-100">Helpfull 👍</span>
+    <ion-avatar>
+      <img src="assets/sale/profile.png" />
+    </ion-avatar>
+  </ion-row>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title slot="end">
+      <ion-button
+        id="open-modalr"
+        class="review-btn text-lowercase"
+        shape="round"
+      >
+        <ion-icon class="me-2" name="pencil"></ion-icon>
+        <span class="text-uppercase">W</span>rite a review</ion-button
+      ></ion-title
+    >
+  </ion-toolbar>
+</ion-footer>
+<ion-modal
+  #modalr
+  trigger="open-modalr"
+  [initialBreakpoint]="1"
+  [breakpoints]="[0, 1]"
+>
+  <ng-template>
+    <ion-label class="mt-4 ion-text-center fw-bolder">
+      What is you rate?
+    </ion-label>
+    <ion-text class="my-2 ion-text-center">
+      <ion-icon
+        *ngFor="let star of stars; let i = index"
+        class="ms-3"
+        [name]="i <= selectedRating ? 'star' : 'star-outline'"
+        (click)="selectRating(i)"
+        [ngClass]="{ selected: i <= selectedRating }"
+      ></ion-icon>
+    </ion-text>
+    <ion-label class="ion-text-center fw-bolder">
+      Please share your opinion <br />
+      about the product
+    </ion-label>
+    <ion-item lines="none">
+      <ion-textarea rows="4" placeholder="Your review"></ion-textarea>
+    </ion-item>
+    <div class="img">
+      <div class="camera" (click)="triggerFileInput()">
+        <ion-icon name="camera"></ion-icon>
+        <br />
+        <ion-label>Add your photos</ion-label>
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelected($event)"
+          multiple
+          accept="image/*"
+          style="display: none"
+        />
+      </div>
+      <ion-thumbnail *ngFor="let i of add_img">
+        <ion-img [src]="i.url" />
+      </ion-thumbnail>
+    </div>
+
+    <ion-item lines="none" class="mt-3">
+      <ion-button
+        (click)="modalr.dismiss()"
+        class="col-12 btn p-2"
+        shape="round"
+      >
+        send review</ion-button
+      >
+    </ion-item>
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,138 @@
+ion-content {
+  --background: var(--ion-color-base);
+
+  ion-item {
+    --background: var(--ion-color-base);
+
+    --padding-start: 0;
+
+  }
+
+  ion-header {
+    ion-toolbar {
+      --background: var(--ion-color-base);
+    }
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --background: var(--ion-color-base);
+  }
+}
+
+.center {
+  margin-left: 20%;
+}
+
+ion-checkbox {
+  --size: 20px;
+  --checkbox-background-checked: var(--ion-color-new-black);
+}
+
+ion-row {
+  position: relative;
+  margin: 5%;
+  border-radius: 8px;
+  background: var(--ion-color-white);
+
+  span {
+    color: #9b9b9b;
+  }
+
+  ion-avatar {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+}
+ion-checkbox::part(container) {
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+
+.img {
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+
+  ion-thumbnail {
+    --size: 130px;
+    --border-radius: 5px;
+
+    ion-img {
+      min-width: 7rem;
+    }
+  }
+}
+
+.review-btn {
+  --background: #DB3022;
+  min-width: 210px;
+}
+
+ion-modal {
+  --height: auto;
+  --border-radius: 15px 15px 0 0;
+  --background: #F9F9F9;
+
+  ion-item {
+    --background: var(--ion-color-base);
+
+    ion-textarea {
+      background: var(--ion-color-white);
+      margin: 3%;
+      --padding-start: 15px;
+      border-radius: 10px;
+    }
+
+  }
+
+  ion-text {
+    color: #9B9B9B;
+
+    ion-icon {
+      font-size: 35px;
+    }
+  }
+}
+
+.camera {
+  margin: 3%;
+  // padding: 5%;
+  min-width: 120px !important;
+  height: 120px;
+  box-shadow: 0 1px 4px rgba(105, 100, 100, 0.1);
+
+  ion-icon {
+    background: #DB3022;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin: 15px 0px 0px 28px;
+  }
+
+  ion-label {
+    font-size: 12px;
+    margin-left: 15px;
+    font-weight: 500;
+  }
+}
+
+.btn {
+  --background: #DB3022;
+  min-height: 50px;
+  color: #fff;
+}
+
+.selected {
+  color: #FFBA49;
+}

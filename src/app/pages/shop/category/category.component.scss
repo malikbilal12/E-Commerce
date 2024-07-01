@@ -1,0 +1,29 @@
+ion-content{
+  --background:var(--ion-color-base);
+  ion-item{
+    --background:var(--ion-color-base);
+
+    --padding-start: 0;
+    --inner-padding-end: 0;
+
+  }
+  ion-header{
+    ion-toolbar{
+      --background:var(--ion-color-base);
+    }
+  }
+  }
+  .center{
+    margin-left: 30%;
+  }
+.view-btn{
+  --background: #DB3022;
+  min-height: 50px;
+}
+.choose{
+  margin-left: 5%;
+  color: #9B9B9B;
+}
+ion-label{
+  margin: 6% 12%;
+}
